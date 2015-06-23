@@ -5,10 +5,10 @@
 
 **Technologies used:**
 
- - ElasticSearch
- - Calaca ElasticSearch UI (AngularJS)
- - Python Requests
- - Python BeautifulSoup
+ - [ElasticSearch](https://www.elastic.co/)
+ - [Calaca ElasticSearch UI (AngularJS)](https://github.com/romansanchez/Calaca)
+ - [Python Requests](http://docs.python-requests.org/en/latest/)
+ - [Python BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/)
 
 
 **Install Dependencies:**
