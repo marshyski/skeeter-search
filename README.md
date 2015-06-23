@@ -1,7 +1,5 @@
 # skeeter-search
 
-Scrape web content, index into ElasticSearch and render with Calaca UI
-
 ### We've all dreamed about creating a search engine, this is where it starts
 
 
@@ -78,7 +76,7 @@ Scrape web content, index into ElasticSearch and render with Calaca UI
           "body": "Music Stream Demos Update Required To play the media you will need to either update your browser to a recent version or update your . Stream Videos Just emo-shredding on my acoustic. Just singing a little bit for the camera. ** Download Still Frame Past Time's EP When Did This Happen ."
        }
 
-with Phone number (not accurate 100%)
+with Phone number (not 100% accurate)
 
        {
           "title": "Ghost County - The Band",
