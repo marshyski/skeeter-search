@@ -18,7 +18,7 @@
  - ElasticSearch (Listening on IPv4 0.0.0.0 not 127.0.0.1 or :::) 
  - Java 7.x / OpenJDK 7
  - `pip install -r requirements.txt` 
- - Any web server (python,nginx,apache)
+ - Any web server (python, nginx, apache)
  - Entry in `elasticsearch.yml` `http.cors.enabled: true`
 
  **Last step is configure ElasticSearch mappings for all indexes to not be analyzed:**
