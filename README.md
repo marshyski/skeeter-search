@@ -91,7 +91,7 @@ with Phone number (not 100% accurate)
           "title": "Ghost County - The Band",
           "url": "http://ghostcounty.com",
           "body": "Ghost County Ghost County E.P. Available Shows The Ghost County Story Comprised of four lifelong friends, Ghost County is a band of individuals who collectively embody the working class area they come from. Born and bred in Shenandoah, Pa, a small town where humble beginnings are the norm, each member developed a strong passion for music throughout their childhoods and formative years as musicians. After numerous stints with many different bands they decided to join together for a musical project that captures the essence of heavy and often bluesy rock music. The group formed in 2011, vowing to create something genuine and sincere that stems from a place they call their own. Nothing expresses their commitment to this movement better than the release of their first EP in July 2014. This initial offering of songs marks the progression and continuance of Ghost County's ever evolving journey. Their tale is an ongoing one that is purely dedicated to aiding the revival of blues based hard rock music. Truthfully, the story has just begun. Contact Ghost County Feel free to email us about booking, questions, or to just say hello! Johnny Mahmod (Singer) [ × ]Close Josh Metkus (Guitar/Bass) [ × ]Close John Wishnefsky (Drummer) [ × ]Close Justin Metkus (Guitar / Bass) [ × ]Close",
-          "phone": "5705900029"
+          "phone": "8765309"
        }
   
 ----------
