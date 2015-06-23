@@ -108,6 +108,6 @@ with Phone number (not 100% accurate)
 ![Screenshot](https://s3.amazonaws.com/timski-pictures/skeeter-screenshot.png)
 
 
-**This project was named after my dog, skeeter**
+**This project was named after my dog, Skeeter**
 
 ![The Skeeter](https://s3.amazonaws.com/timski-pictures/skeeter.jpg)
