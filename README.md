@@ -110,4 +110,4 @@ with Phone number (not 100% accurate)
 
 **This project was named after my dog, skeeter**
 
-![The Skeeter](https://s3.amazonaws.com/timski-pictures/theskeeter.jpg)
+![The Skeeter](https://s3.amazonaws.com/timski-pictures/skeeter.jpg)
