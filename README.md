@@ -17,8 +17,8 @@
 
  - ElasticSearch (Listening on IPv4 0.0.0.0 not 127.0.0.1 or :::) 
  - Java 7.x / OpenJDK 7
- - `pip install requirements.txt` 
- - `python -m SimpleHTTPServer` or `nginx` or `apache`
+ - `pip install -r requirements.txt` 
+ - Any web server (python,nginx,apache)
  - Entry in `elasticsearch.yml` `http.cors.enabled: true`
 
  **Last step is configure ElasticSearch mappings for all indexes to not be analyzed:**
@@ -52,6 +52,7 @@
           }
        }'
 
+----------
 
 **Configuration (YAML):**
 
@@ -60,13 +61,21 @@
     # Sites you want to index
     sites: sites: ['http://marshyski.com', 'http://marshyski.com/man-behind-the-keyboard', 'http://marshyski.com/music', 'http://ghostcounty.com/']
     
-    # ElasticSearch Settings
+    # ElasticSearch Configurations
     elastic_host : 127.0.0.1
     elastic_port : 9200
     index_name : websites
     index_type : sites
 
 ----------
+
+**Getting Started:**
+
+    git clone https://github.com/marshyski/skeeter-search.git
+    cd skeeter-search
+    pip install -r requirements.txt
+    python skeeter.py
+    python -m SimpleHTTPServer
 
 **Example JSON Object:**
 
