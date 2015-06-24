@@ -66,6 +66,17 @@
     elastic_port : 9200
     index_name : websites
     index_type : sites
+    
+**Configuration (JS):**
+
+In *js/config.js* change the configs to match your Elasticsearch cluster. 
+```js
+url: "http://127.0.01:9200" //Cluster http url
+index_name: "websites" //Index name or comma-separated list
+type: "sites" //Type
+size: 10 //Number of results displayed at a time
+search_delay: 500 //Delay between actual search request in ms
+```
 
 ----------
 
