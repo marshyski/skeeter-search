@@ -13,7 +13,10 @@ index_type = sites['index_type']
 elastic_host = sites['elastic_host']
 elastic_port = sites['elastic_port']
 
+# Connect to ElasticSearch
 es = elasticsearch.Elasticsearch(elastic_host, port=elastic_port)
+
+# Delete & Create index
 es.indices.delete(index=index_name, ignore=[400, 404])
 es.indices.create(index=index_name, ignore=400)
 
@@ -22,28 +25,23 @@ for URL in sites['sites']:
     try:
        r = requests.get(URL, verify=False)
        r_text = r.text
-       soup = BeautifulSoup(r_text)
+       soup = BeautifulSoup(r_text, "lxml")
        title = soup.title.string
        if r.status_code == 200:
 
+          # Get only text from request body
           site_text = soup.get_text()
 
+          # Strip HTML and join new lines
           lines = (line.strip() for line in site_text.splitlines())
           chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
           join = ' '.join(chunk for chunk in chunks if chunk)
           text = re.sub(r'[^a-zA-Z\d\s]', '', join)
 
-          phone_pattern = re.compile(r'(\d{3})\D*(\d{3})\D*(\d{4})\D*(\d*)')
-          phone_search = phone_pattern.search(text)
-          phone_number = "None"
-          if phone_search:
-             phone_groups = phone_search.group(0).rsplit(' ', 1)[0]
-             phone_number = re.compile('[^0-9]').sub('', phone_groups)
-
           for script in soup(["script", "style", "title", "a", "footer"]) + \
                         soup.findAll('div', attrs={'class': 'footer'}) + \
                         soup.findAll('div', attrs={'id': 'sidebar'}):
-              script.extract()
+                        script.extract()
 
           site_text = soup.get_text().replace('"', "'")
 
@@ -53,14 +51,15 @@ for URL in sites['sites']:
 
 	  date_time = datetime.datetime.strftime(datetime.datetime.now(), '%Y%m%d%H%M%S')
 
-          if phone_number != "None":
-             data = '{' + '"title": "' + title + '", "url": "' + URL + '", "body": "' + text + '", "phone": "' + phone_number + '"}'
-          else:
-             data = '{' + '"title": "' + title + '", "url": "' + URL + '", "body": "' + text + '"}'
+          # Build request to ElasticSearch
+          js = {"title":title, "url":URL, "date":date_time, "body":text}
+          data = json.dumps(js)
 
           print data
+
+          # POST to ElasticSearch
           res = es.index(index=index_name, doc_type=index_type, id=date_time, body=data)
-          print (res['created'])
+          print "Created", res['created'], "\n"
           time.sleep(1.0)
 
        else:
